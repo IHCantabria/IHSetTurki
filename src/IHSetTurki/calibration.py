@@ -45,10 +45,10 @@ class cal_Turki(object):
         self.Dir = wav['Dir'].values
         self.time = mkTime(wav['Y'].values, wav['M'].values, wav['D'].values, wav['h'].values)
                 
-        self.depth = kwargs['depth']
-        self.angleBathy = kwargs['angleBathy']
-        self.D50 = kwargs['D50']
-        self.BeachL = kwargs['BeachL']
+        self.depth = cfg['depth'].values
+        self.angleBathy = cfg['bathy_angle'].values
+        self.D50 = cfg['D50'].values
+        self.BeachL = cfg['BeachL'].values
         
         breakType = "spectral"
         self.Hb, self.theb, self.depthb = BreakingPropagation(self.Hs, self.Tp, self.Dir, np.repeat(self.depth, (len(self.Hs))), np.repeat(self.angleBathy, (len(self.Hs))),  breakType)
