@@ -10,6 +10,10 @@ import numpy as np
 
 # config = xr.Dataset(coords={'dt': 3,                # [hours]
 #                             'switch_alpha_ini': 0,  # Calibrate the initial position? (0: No, 1: Yes)
+#                             'depth': 10,              # Water depth [m] (MD, TU)
+#                             'D50': .3e-3,             # Median grain size [m] (MD, TU)
+#                             'bathy_angle': 54.8,      # Bathymetry mean orientation [deg N] (MD, TU)
+#                             'BeachL': 1200,           # Beach Length [m] (TU)
 #                             'Ysi': 2000,            # Initial year for calibration
 #                             'Msi': 1,               # Initial month for calibration
 #                             'Dsi': 1,               # Initial day for calibration
@@ -25,6 +29,10 @@ import numpy as np
 
 config = xr.Dataset(coords={'dt': 3,                # [hours]
                             'switch_alpha_ini': 1,  # Calibrate the initial position? (0: No, 1: Yes)
+                            'depth': 10,              # Water depth [m] (MD, TU)
+                            'D50': .3e-3,             # Median grain size [m] (MD, TU)
+                            'bathy_angle': 54.8,      # Bathymetry mean orientation [deg N] (MD, TU)
+                            'BeachL': 1200,           # Beach Length [m] (TU)
                             'Ysi': 1975,            # Initial year for calibration
                             'Msi': 1,               # Initial month for calibration
                             'Dsi': 1,               # Initial day for calibration
