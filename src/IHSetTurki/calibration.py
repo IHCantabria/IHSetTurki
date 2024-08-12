@@ -95,6 +95,7 @@ class cal_Turki(object):
         if self.switch_alpha_ini == 0:
             def model_simulation(par):
                 kk = par['kk']
+                alp0 = par['alp0']
 
                 Ymd, _ = turki.turki(self.EF_splited,
                                     self.Hb_splited,
@@ -107,7 +108,8 @@ class cal_Turki(object):
                 return Ymd[self.idx_obs_splited]
             
             self.params = [
-                Uniform('kk', 0.001, 10)
+                Uniform('kk', 0.001, 10),
+                Uniform('alp0', np.min(self.Obs), np.max(self.Obs))
             ]
             self.model_sim = model_simulation
 
