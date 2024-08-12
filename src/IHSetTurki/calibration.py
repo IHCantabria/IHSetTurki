@@ -154,7 +154,41 @@ class cal_Turki(object):
         self.observations = self.Obs_splited
 
         # Validation
-        idx = np.where((self.time_obs < self.start_date) | (self.time_obs > self.end_date))
+        idx = np.where((self.time_obs < self.start_date) | (self.time_obs > self.end_date))[0]
         self.idx_validation_obs = idx
-        mkIdx = np.vectorize(lambda t: np.argmin(np.abs(self.time[self.idx_validation] - t)))
-        self.idx_validation_for_obs = mkIdx(self.time_obs[idx])
+        if len(self.idx_validation)>0:
+            mkIdx = np.vectorize(lambda t: np.argmin(np.abs(self.time[self.idx_validation] - t)))
+            if len(self.idx_validation_obs)>0:
+                self.idx_validation_for_obs = mkIdx(self.time_obs[idx])
+            else:
+                self.idx_validation_for_obs = []
+        else:
+            self.idx_validation_for_obs = []
+
+    # def split_data(self):
+    #     """
+    #     Split the data into calibration and validation datasets.
+    #     """
+    #     idx = np.where((self.time < self.start_date) | (self.time > self.end_date))
+    #     self.idx_validation = idx
+
+    #     idx = np.where((self.time >= self.start_date) & (self.time <= self.end_date))
+    #     self.idx_calibration = idx
+    #     self.EF_splited = self.EF[idx]
+    #     self.Hb_splited = self.Hb[idx]
+    #     self.theb_splited = self.theb[idx]
+    #     self.time_splited = self.time[idx]
+
+    #     idx = np.where((self.time_obs >= self.start_date) & (self.time_obs <= self.end_date))
+    #     self.Obs_splited = self.Obs[idx]
+    #     self.time_obs_splited = self.time_obs[idx]
+
+    #     mkIdx = np.vectorize(lambda t: np.argmin(np.abs(self.time_splited - t)))
+    #     self.idx_obs_splited = mkIdx(self.time_obs_splited)
+    #     self.observations = self.Obs_splited
+
+    #     # Validation
+    #     idx = np.where((self.time_obs < self.start_date) | (self.time_obs > self.end_date))
+    #     self.idx_validation_obs = idx
+    #     mkIdx = np.vectorize(lambda t: np.argmin(np.abs(self.time[self.idx_validation] - t)))
+    #     self.idx_validation_for_obs = mkIdx(self.time_obs[idx])
