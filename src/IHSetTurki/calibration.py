@@ -46,7 +46,7 @@ class cal_Turki(object):
         self.time = mkTime(wav['Y'].values, wav['M'].values, wav['D'].values, wav['h'].values)
                 
         self.depth = cfg['depth'].values
-        self.angleBathy = 90 - cfg['bathy_angle'].values
+        self.angleBathy = cfg['bathy_angle'].values
         self.D50 = cfg['D50'].values
         self.BeachL = cfg['BeachL'].values
         
