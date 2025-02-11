@@ -2,20 +2,18 @@ from setuptools import setup, find_packages
 
 setup(
     name='IHSetTurki',
-    version='1.0.1',
+    version='1.0.2',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
         'numpy',
         'xarray',
         'numba',
-        'datetime',
-        'spotpy',
         'IHSetCalibration @ git+https://github.com/defreitasL/IHSetCalibration.git',
         'fast_optimization @ git+https://github.com/defreitasL/fast_optimization.git'
     ],
-    author='Changbin Lim',
-    author_email='limcs@unican.es',
+    author='Lucas de Freitas Pereira',
+    author_email='lucas.defreitas@unican.es',
     description='IH-SET Turki et al. (2013)',
     url='https://github.com/IHCantabria/IHSetTurki',
     classifiers=[

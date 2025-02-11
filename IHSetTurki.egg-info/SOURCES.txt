@@ -1,7 +1,6 @@
 README.md
 setup.py
 IHSetTurki/__init__.py
-IHSetTurki/calibration.py
 IHSetTurki/calibration_2.py
 IHSetTurki/direct_run.py
 IHSetTurki/plot_par_evolution.py
