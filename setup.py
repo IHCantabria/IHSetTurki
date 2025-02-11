@@ -9,7 +9,6 @@ setup(
         'numpy',
         'xarray',
         'numba',
-        'IHSetCalibration @ git+https://github.com/defreitasL/IHSetCalibration.git',
         'fast_optimization @ git+https://github.com/defreitasL/fast_optimization.git'
     ],
     author='Lucas de Freitas Pereira',
