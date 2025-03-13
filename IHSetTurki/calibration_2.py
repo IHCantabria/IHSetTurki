@@ -19,6 +19,9 @@ class cal_Turki_2(object):
     def __init__(self, path):
 
         self.path = path
+        self.name = 'Turki et al. (2013)'
+        self.mode = 'calibration'
+        self.type = 'RT'
      
         data = xr.open_dataset(path)
         
@@ -225,3 +228,12 @@ class cal_Turki_2(object):
         Calibrate the model.
         """
         self.solution, self.objectives, self.hist = self.calibr_cfg.calibrate(self)
+
+        self.full_run = self.run_model(self.solution)
+
+        if self.switch_Yini == 0:
+            self.par_names = [r'$k_k$']
+            self.par_values = self.solution.copy()
+        elif self.switch_Yini == 1:
+            self.par_names = [r'$k_k$', r'$\alpha_0$']
+            self.par_values = self.solution.copy()

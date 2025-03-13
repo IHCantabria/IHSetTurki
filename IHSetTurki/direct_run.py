@@ -19,6 +19,9 @@ class Turki_run(object):
     def __init__(self, path):
 
         self.path = path
+        self.name = 'Turki et al. (2013)'
+        self.mode = 'standalone'
+        self.type = 'RT'
      
         data = xr.open_dataset(path)
         
@@ -121,6 +124,13 @@ class Turki_run(object):
 
     def run(self, par):
         self.full_run = self.run_model(par)
+        if self.switch_Yini == 1:
+            self.par_names = [r'$k_k$']
+            self.par_values = par
+        elif self.switch_Yini == 0:
+            self.par_names = [r'$k_k$', r'$\alpha_0$']
+            self.par_values = par
+
         self.calculate_metrics()
 
     def calculate_metrics(self):
