@@ -26,6 +26,7 @@ class Turki_run(object):
         data = xr.open_dataset(path)
         
         cfg = json.loads(data.attrs['run_Turki'])
+        self.cfg = cfg
 
         self.switch_Yini = cfg['switch_Yini']
         self.D50 = cfg['D50']
