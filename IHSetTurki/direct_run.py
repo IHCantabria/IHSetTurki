@@ -126,10 +126,10 @@ class Turki_run(object):
     def run(self, par):
         self.full_run = self.run_model(par)
         if self.switch_Yini == 1:
-            self.par_names = [r'$k_k$']
+            self.par_names = [r'k_k']
             self.par_values = par
         elif self.switch_Yini == 0:
-            self.par_names = [r'$k_k$', r'$\alpha_0$']
+            self.par_names = [r'k_k', r'alpha_0']
             self.par_values = par
 
         self.calculate_metrics()

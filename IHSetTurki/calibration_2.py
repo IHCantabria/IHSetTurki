@@ -233,8 +233,8 @@ class cal_Turki_2(object):
         self.full_run = self.run_model(self.solution)
 
         if self.switch_Yini == 0:
-            self.par_names = [r'$k_k$']
+            self.par_names = [r'k_k']
             self.par_values = self.solution.copy()
         elif self.switch_Yini == 1:
-            self.par_names = [r'$k_k$', r'$\alpha_0$']
+            self.par_names = [r'k_k', r'alpha_0']
             self.par_values = self.solution.copy()
