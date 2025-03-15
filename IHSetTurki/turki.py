@@ -13,9 +13,8 @@ def turki(EF, Hb, theb, BeachL, dt, kk, alp0):
     gamb = theb * np.pi/180 - alp0 * np.pi/180
      
     hc = (2.8*Hb)**0.67
-    for i in range(len(hc)):
-        if hc[i] < 0.1:
-           hc[i] = 0.1
+
+    hc[hc < 0.1] = 0.1
 
     KK = (0.5*kk*0.07)/((rhos-rho)*g*(1-a))*3600
     
