@@ -39,7 +39,7 @@ from numba import njit
 import math
 
 @njit(nopython=True, fastmath=True, cache=True)
-def turki_extreme(EF, Hb, theb, BeachL, dt, kk, alp0):
+def turki(EF, Hb, theb, BeachL, dt, kk, alp0):
     # Parâmetros constantes
     rhos = 2650.0
     rho = 1025.0
