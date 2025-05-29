@@ -173,8 +173,8 @@ class cal_Turki_2(object):
             self.run_model = run_model
 
             def init_par(population_size):
-                log_lower_bounds = np.array([self.lb[0], 0.5*np.min(self.Obs)])
-                log_upper_bounds = np.array([self.ub[0], 1.5*np.max(self.Obs)])
+                log_lower_bounds = np.array([self.lb[0], np.min(self.Obs) - 360])
+                log_upper_bounds = np.array([self.ub[0], 1.5*np.max(self.Obs) + 360])
                 population = np.zeros((population_size, 2))
                 for i in range(2):
                     population[:,i] = np.random.uniform(log_lower_bounds[i], log_upper_bounds[i], population_size)
