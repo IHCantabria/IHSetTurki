@@ -77,14 +77,14 @@ def turki(EF, Hb, theb, BeachL, dt, kk, alp0):
 
     # Integração cumulativa
     # intP[0]
-    intP[0] = P[0] * dt
-    intQ[0] = Q[0] * math.exp(intP[0]) * dt
+    intP[0] = P[0] * dt[0]
+    intQ[0] = Q[0] * math.exp(intP[0]) * dt[0]
     # laço de 1 a n-1
     for i in range(1, n):
         # acumulado de P
-        intP[i] = intP[i-1] + P[i] * dt
+        intP[i] = intP[i-1] + P[i] * dt[i]
         # acumulado de Q modulado por exp(intP[i])
-        intQ[i] = intQ[i-1] + Q[i] * math.exp(intP[i]) * dt
+        intQ[i] = intQ[i-1] + Q[i] * math.exp(intP[i]) * dt[i]
 
     # Cálculo de R e ângulo final
     for i in range(n):
