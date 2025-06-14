@@ -38,9 +38,9 @@ class cal_Turki_2(object):
         
         self.switch_brk = cfg['switch_brk']
         if self.switch_brk == 1:
-            self.bathy_angle = cfg['bathy_angle']
+            self.bathy_angle = circmean(data.phi.values, high=360, low=0)
             self.breakType = cfg['break_type']
-            self.depth = cfg['depth']
+            self.depth = np.mean(data.waves_depth.values)
 
         self.calibr_cfg = fo.config_cal(cfg)
 
