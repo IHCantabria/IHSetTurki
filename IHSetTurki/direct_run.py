@@ -53,8 +53,8 @@ class Turki_run(object):
         data.close()
         
         if self.switch_brk == 0:
-            self.depthb = self.hb / 0.55
             self.hb = self.hs
+            self.depthb = self.hb / 0.55
             self.dirb = self.dir
         elif self.switch_brk == 1:
             self.hb, self.dirb, self.depthb = BreakingPropagation(self.hs, self.tp, self.dir, np.repeat(self.depth, len(self.hs)), np.repeat(self.bathy_angle, len(self.hs)), self.breakType)
