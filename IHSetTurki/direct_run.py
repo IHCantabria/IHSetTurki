@@ -132,7 +132,7 @@ class Turki_run(object):
             self.par_names = [r'k_k', r'alpha_0']
             self.par_values = par
 
-        self.calculate_metrics()
+        # self.calculate_metrics()
 
     def calculate_metrics(self):
         self.metrics_names = fo.backtot()[0]
