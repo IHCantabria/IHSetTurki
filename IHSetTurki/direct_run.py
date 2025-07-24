@@ -155,7 +155,7 @@
 
 
 import numpy as np
-from .turki import turki_njit
+from .turki import turki
 from IHSetUtils.CoastlineModel import CoastlineModel
 from IHSetUtils import hunt
 
@@ -208,13 +208,13 @@ class Turki_run(CoastlineModel):
             alp0 = self.alp0
         else:
             alp0 = par[1]
-        Ymd, _ = turki_njit(self.EF,
-                            self.hb,
-                            self.dirb,
-                            self.BeachL,
-                            self.dt,
-                            kk,
-                            alp0)
+        Ymd, _ = turki(self.EF,
+                       self.hb,
+                       self.dirb,
+                       self.BeachL,
+                       self.dt,
+                       kk,
+                       alp0)
         return Ymd
     
     def _set_parameter_names(self):
