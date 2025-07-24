@@ -38,7 +38,7 @@ import numpy as np
 from numba import njit
 import math
 
-@njit(nopython=True, fastmath=True, cache=True)
+@njit(fastmath=True, cache=True)
 def turki(EF, Hb, theb, BeachL, dt, kk, alp0):
     # Parâmetros constantes
     rhos = 2650.0
