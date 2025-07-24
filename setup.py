@@ -9,6 +9,7 @@ setup(
         'numpy',
         'xarray',
         'numba',
+        'IHSetUtils @ git+https://github.com/IHCantabria/IHSetUtils.git',
         'fast_optimization @ git+https://github.com/defreitasL/fast_optimization.git'
     ],
     author='Lucas de Freitas Pereira',
